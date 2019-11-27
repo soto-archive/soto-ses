@@ -1,16 +1,16 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-  name: "SwiftAWSEmail",
+  name: "SES",
   products: [
-      .library(name: "SwiftAWSEmail", targets: ["SwiftAWSEmail"]),
+      .library(name: "SES", targets: ["SES"]),
   ],
   dependencies: [
-      .package(url: "https://github.com/noppoMan/aws-sdk-swift-core.git", .upToNextMajor(from: "1.0.0"))
+      .package(url: "https://github.com/swift-aws/aws-sdk-swift-core.git", .upToNextMinor(from: "4.0.0"))
   ],
   targets: [
-      .target(name: "SwiftAWSEmail", dependencies: ["AWSSDKSwiftCore"]),
+      .target(name: "SES", dependencies: ["AWSSDKSwiftCore"]),
   ]
 )
